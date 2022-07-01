@@ -9,12 +9,12 @@ namespace WishList.Models
       [EmailAddress]
       public string Email {get; set;}
       [Required]
-      [DataType.Password]
+      [DataType(DataType.Password)]
       [StringLength(100,MinimumLength=8)]
       public string Password {get; set;}
       [Required]
-      [DataType.Password]
-      [Compare(Password)]
+      [DataType(DataType.Password)]
+      [Compare("Password")]
       public string ConfirmPassword {get; set;}
     }
 }
