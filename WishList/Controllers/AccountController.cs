@@ -31,7 +31,14 @@ namespace WishList.Controllers
                 ApplicationUser user = new ApplicationUser();
                 user.UserName = vview.Email;
                 user.Email = vview.Email;
-                _userManager.CreateAsync(user, vview.Password);
+                var result = _userManager.CreateAsync(user, vview.Password);
+                if (!result.Result.Succeeded) {
+                    foreach (var item in result.Result.Errors)
+                    {
+                        ModelState.AddModelError(vview.Password,item.Description);
+                    }
+                    return View(vview);
+                }
                 return RedirectToAction("Index","Home");
             }
             return View(vview);
