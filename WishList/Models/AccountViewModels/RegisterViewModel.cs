@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotation;
 
 namespace WishList.Models.AccountViewModels
