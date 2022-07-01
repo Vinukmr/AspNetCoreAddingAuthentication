@@ -4,9 +4,10 @@ using WishList.Models;
 
 namespace WishList.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
-      //public Authorize authorize {get; set;}
+      
       private readonly UserManager<ApplicationUser> _userManager;
       private readonly SignInManager<ApplicationUser> _signInManager;
       
