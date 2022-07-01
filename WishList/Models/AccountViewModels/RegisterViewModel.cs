@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotation;
 
-namespace WishList.Models
+namespace WishList.Models.AccountViewModels
 {
     public class RegisterViewModel
     {
@@ -10,7 +10,7 @@ namespace WishList.Models
       public string Email {get; set;}
       [Required]
       [DataType(DataType.Password)]
-      [StringLength(100,MinimumLength=8)]
+      [StringLength(100, MinimumLength = 8 )]
       public string Password {get; set;}
       [Required]
       [DataType(DataType.Password)]
