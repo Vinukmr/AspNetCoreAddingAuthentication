@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WishList.Models;
 using Microsoft.AspNetCore.Identity;
-
+using WishList.Models.AccountViewModels;
 namespace WishList.Controllers
 {
     [Authorize]
@@ -18,8 +18,15 @@ namespace WishList.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public ViewResult Register() {
+        public IActionResult Register() {
             return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public IActionResult Register(RegisterViewModel vview)
+        {
+            return RedirectToAction("HomeController/Index");
         }
     }
     
