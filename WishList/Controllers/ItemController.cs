@@ -44,13 +44,13 @@ namespace WishList.Controllers
 
         public IActionResult Delete(int id)
         {
-            if (_userManager.GetUserAsync(HttpContext.User).Id == id) {
-                var item = _context.Items.FirstOrDefault(e => e.Id == id);
-                _context.Items.Remove(item);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return Unauthorized();
+            var x = _userManager.GetUserAsync(HttpContext.User).Result;
+            var item = _context.Items.FirstOrDefault(e => e.Id == id);
+            if (item.User.Id != x.Id)
+                return Unauthorized();
+            _context.Items.Remove(item);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
