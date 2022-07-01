@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WishList.Models;
 using Microsoft.AspNetCore.Identity;
@@ -15,6 +15,12 @@ namespace WishList.Controllers
         _userManager= userManager;
         _signInManager= signInManager;
       }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ViewResult Register() {
+            return View();
+        }
     }
     
 }
