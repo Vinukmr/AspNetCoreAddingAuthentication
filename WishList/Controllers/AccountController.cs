@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WishList.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace WishList.Controllers
 {
