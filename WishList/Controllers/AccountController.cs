@@ -15,7 +15,7 @@ namespace WishList.Controllers
         _userManager= userManager;
         _signInManager= signInManager;
       }
-
+        
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Register() {
@@ -26,8 +26,13 @@ namespace WishList.Controllers
         [AllowAnonymous]
         public IActionResult Register(RegisterViewModel vview)
         {
-            return RedirectToAction("HomeController/Index");
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Home/Index");
+            }
+            return View(vview);
         }
+
     }
     
 }
