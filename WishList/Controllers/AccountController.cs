@@ -28,7 +28,7 @@ namespace WishList.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Home/Index");
+                return RedirectToAction("Index","Home");
             }
             return View(vview);
         }
