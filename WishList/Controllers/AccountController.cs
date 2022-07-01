@@ -6,14 +6,13 @@ namespace WishList.Controllers
 {
     [Authorize]
     public class AccountController : Controller
-    {
-      
+    {      
       private readonly UserManager<ApplicationUser> _userManager;
       private readonly SignInManager<ApplicationUser> _signInManager;
       
-      public AccountController(UserManager<ApplicationUser> usr,SignInManager<ApplicationUser> signin){
-        _userManager= usr;
-        _signInManager= signin;
+      public AccountController(UserManager<ApplicationUser> userManager,SignInManager<ApplicationUser> signInManager){
+        _userManager= userManager;
+        _signInManager= signInManager;
       }
     }
     
