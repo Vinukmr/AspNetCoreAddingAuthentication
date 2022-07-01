@@ -6,7 +6,7 @@ namespace WishList.Controllers
 {
     public class AccountController : Controller
     {
-      public Authorize authorize {get; set;}
+      //public Authorize authorize {get; set;}
       private readonly UserManager<ApplicationUser> _userManager;
       private readonly SignInManager<ApplicationUser> _signInManager;
       
