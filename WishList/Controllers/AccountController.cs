@@ -28,6 +28,10 @@ namespace WishList.Controllers
         {
             if (ModelState.IsValid)
             {
+                ApplicationUser user = new ApplicationUser();
+                user.UserName = vview.Email;
+                user.Email = vview.Email;
+                _userManager.CreateAsync(user, vview.Password);
                 return RedirectToAction("Index","Home");
             }
             return View(vview);
