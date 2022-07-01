@@ -1,5 +1,9 @@
-﻿<h1>Welcome!</h1>
+﻿@using Microsoft.AspNetCore.Identity
+@using WishList.Models
 
-<div>
-    <a asp-action="Index" asp-controller="Item">View wishlist</a>
-</div>
+@inject SignInManager<ApplicationUser> SignInManager
+    <h1>Welcome!</h1>
+
+    <div>
+        <a asp-action="Index" asp-controller="Item">View wishlist</a>
+    </div>
